@@ -119,8 +119,18 @@ female = st.radio(
     format_func=lambda x: x[1]
 )[0]
 
-age = st.number_input("Enter your age:", min_value=1, max_value=98, step=1)
+st.subheader("What is your age?")
+age = st.text_input("Enter your age:")
 
+if age.isdigit():
+    age = int(age)
+    if 1 <= age <= 98:
+        st.write(f"You entered: {age}")
+    else:
+        st.error("Please enter a valid age between 1 and 98.")
+else:
+    if age:  # Only show error if something was entered
+        st.error("Please enter a numeric value.")
 def sent_app(user_data):
 
     user_data = pd.DataFrame([user_data], columns=['income', 'educ2', 'parent','married', 'female', 'age'])
@@ -146,7 +156,7 @@ def sent_app(user_data):
             "bar": {"color": "silver"} }))
     return st.plotly_chart(fig)
 
-if st.button("Submit"):
+if st.button("Done"):
     user_data = {
         'income': income,
         'educ2': educ2,
