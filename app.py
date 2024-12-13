@@ -40,23 +40,23 @@ x_train, x_test, y_train, y_test = train_test_split(
 logreg = LogisticRegression(class_weight = "balanced", random_state = 16)
 logreg.fit(x_train, y_train) 
 
-st.markdown("Welcome to my app!")
+st.markdown("Welcome!")
 
-st.markdown("Please provide your personal details below to predict your usage of LinkedIn:")
+st.markdown("Please provide the following information below to predict your usage of LinkedIn:")
 
-st.subheader("Do you ever use LinkedIn?")
+st.subheader("Have you ever used LinkedIn?")
 sm_li = st.selectbox(
     "Select an option:",
     options=[
-        (1, "Yes, I use LinkedIn"),
-        (0, "No, I do not use LinkedIn")
+        (1, "Yes"),
+        (0, "No")
     ],
     format_func=lambda x: x[1]
 )[0]
 
-st.subheader("What is your household income?")
+st.subheader("What is your income?")
 income = st.selectbox(
-    "Select your household income range:",
+    "Select your income range:",
     options=[
         (1, "Less than $10,000"),
         (2, "$10,000 - $19,999"),
@@ -73,7 +73,7 @@ income = st.selectbox(
     format_func=lambda x: x[1]
 )[0]
 
-st.subheader("What is your highest level of education?")
+st.subheader("What level of education have you completed")
 educ2 = st.selectbox(
     "Select your highest level of education:",
     options=[
@@ -89,7 +89,7 @@ educ2 = st.selectbox(
     format_func=lambda x: x[1]
 )[0]
 
-st.subheader("Are you a parent of a child under 18 living in your home?")
+st.subheader("Are you a parent of a child whose age is less than 18 living in your home?")
 parent = st.radio(
     "Select your parental status:",
     options=[
@@ -99,12 +99,12 @@ parent = st.radio(
     format_func=lambda x: x[1]
 )[0]
 
-st.subheader("What is your marital status?")
+st.subheader("Are you married?")
 married = st.radio(
     "Select your marital status:",
     options=[
-        (1, "Married"),
-        (0, "Not Married")
+        (1, "Yes"),
+        (0, "No")
     ],
     format_func=lambda x: x[1]
 )[0]
@@ -140,10 +140,10 @@ def sent_app(user_data):
         gauge={
             "axis": {"range": [0, 100]},
             "steps": [
-                {"range": [0, 30], "color": "mediumvioletred"},
-                {"range": [30, 70], "color": "darkturquoise"},
-                {"range": [70, 100], "color": "mediumspringgreen"},],
-            "bar": {"color": "gold"} }))
+                {"range": [0, 30], "color": "purple"},
+                {"range": [30, 70], "color": "blue"},
+                {"range": [70, 100], "color": "yellow"},],
+            "bar": {"color": "silver"} }))
     return st.plotly_chart(fig)
 
 if st.button("Submit"):
