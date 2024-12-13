@@ -73,21 +73,26 @@ income = st.radio(
     format_func=lambda x: x[1]
 )[0]
 
-st.subheader("What level of education have you completed")
-educ2 = st.selectbox(
-    "Select your highest level of education:",
-    options=[
-        (1, "Less than high school"),
-        (2, "High school incomplete"),
-        (3, "High school graduate"),
-        (4, "Some college, no degree"),
-        (5, "Two-year associate degree"),
-        (6, "Four-year bachelor's degree"),
-        (7, "Some postgraduate schooling, no degree"),
-        (8, "Postgraduate or professional degree")
-    ],
-    format_func=lambda x: x[1]
-)[0]
+st.subheader("What level of education have you completed?")
+education_levels = [
+    "📘 Less than high school",
+    "📕 High school incomplete",
+    "🎓 High school graduate",
+    "📚 Some college, no degree",
+    "🛠️ Two-year associate degree",
+    "🎓 Four-year bachelor's degree",
+    "📖 Some postgraduate schooling, no degree",
+    "🎓 Postgraduate or professional degree"
+]
+
+educ2 = st.slider(
+    "Select the number corresponding to your highest level of education:",
+    min_value=1,
+    max_value=len(education_levels),
+    format="%d"
+)
+
+st.write(f"You selected: {education_levels[educ2 - 1]}")
 
 st.subheader("Are you a parent of a child whose age is less than 18 living in your home?")
 parent = st.radio(
