@@ -22,7 +22,7 @@ MarkupSafe==3.0.2
 matplotlib==3.9.4
 mdurl==0.1.2
 mizani==0.13.1
-narwhals==1.18.2
+narwhals==1.18.3
 nltk==3.9.1
 numpy==2.2.0
 packaging==24.2
@@ -43,6 +43,7 @@ regex==2024.11.6
 requests==2.32.3
 rich==13.9.4
 rpds-py==0.22.3
+scikit-learn==1.6.0
 scipy==1.14.1
 six==1.17.0
 smmap==5.0.1
@@ -50,6 +51,7 @@ statsmodels==0.14.4
 streamlit==1.41.0
 tenacity==9.0.0
 textblob==0.18.0.post0
+threadpoolctl==3.5.0
 toml==0.10.2
 tornado==6.4.2
 tqdm==4.67.1
@@ -57,3 +59,4 @@ typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.2.3
 watchdog==6.0.0
+
