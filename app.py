@@ -101,10 +101,10 @@ parent = st.radio(
 
 st.subheader("Are you married?")
 married = st.radio(
-    "Select your marital status:",
+    "Let us know your marital status:",
     options=[
-        (1, "Yes"),
-        (0, "No")
+        (1, "💍 Yes"),
+        (0, "✨ No")
     ],
     format_func=lambda x: x[1]
 )[0]
