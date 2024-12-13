@@ -56,7 +56,7 @@ sm_li = st.selectbox(
 
 st.subheader("What is your income?")
 income = st.radio(
-    "Select your income range:",
+    "Where does your income fit in?💰",
     options=[
         (1, "Less than $10,000"),
         (2, "$10,000 - $19,999"),
