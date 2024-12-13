@@ -55,7 +55,7 @@ sm_li = st.selectbox(
 )[0]
 
 st.subheader("What is your income?")
-income = st.selectbox(
+income = st.radio(
     "Select your income range:",
     options=[
         (1, "Less than $10,000"),
